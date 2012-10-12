@@ -1,0 +1,39 @@
+<script type="text/javascript" src="https://js.stripe.com/v1/"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    <% if Settings.stripe_payments_mode == 'test' %>
+      Stripe.setPublishableKey("<%= Settings.stripe_test_publishable_key %>");
+    <% elsif settings.stripe_payments_mode == 'live' %>
+      Stripe.setPublishableKey("<%= Settings.stripe_live_publishable_key %>");
+    <% end %>
+    function stripeResponseHandler(status, response) {
+        if (response.error) {
+          alert(response.error.message)
+          $("#submit_button").removeAttr("disabled");
+        } else {
+            var form$ = $("#checkout");
+            var token = response['id'];
+            form$.append("<input type='hidden' name='stripe_token' value='" + token + "'/>");
+            form$.get(0).submit();
+        }
+    }
+
+    $("#checkout").submit(function(event) {
+      // disable the submit button to prevent repeated clicks
+      $('#submit_button').attr("disabled", "disabled");
+
+      Stripe.createToken({
+          number: $('#card_number').val(),
+          cvc: $('#card_cvc').val(),
+          exp_month: $('#card_expiry_month').val(),
+          exp_year: $('#card_expiry_year').val(),
+          address_line1: $('#address_line1').val(),
+          address_line2: $('#address_line2').val(),
+          address_zip: $('#address_zip').val()
+      }, stripeResponseHandler);
+
+      // prevent the form from submitting with the default action
+      return false;
+    });
+  });
+</script>

@@ -16,25 +16,24 @@ product_name: "Selfstarter"
 # It should be in app/assets/images
 product_image_path: "my-product-image.png"
 
-# The message on the preorder page, Lockitron's 
+# The message on the preorder page, Lockitron's
 value_proposition: "Roll your own crowdfunding"
 
 # YouTube Video URL (The embed URL, without the query string options)
 # There's no Vimeo support at the moment, but feel free to implement it and  send a pull request!
 youtube_embed_url: "https://www.youtube.com/v/D1L3o88GKew"
 
-# Amazon settings -- you'll need an Amazon Payments account, sign up here --> http://bit.ly/SGksTv
+# Payments settings
+price:  19.95
+payment_description: "This is what will appear on your manage.stripe.com dashboard"
 
-# To find your access key and secret key, head over to here --> http://bit.ly/R4I4ky (Follow that guide in the Seller Central page)
-amazon_access_key: "YOUR_AMAZON_ACCESS_KEY"
-amazon_secret_key: "YOUR_AMAZON_SECRET_KEY"
-price: 	19.95
-
-payment_description: "You really should change this text because people will see it on Amazon's order page!!!!!"
-
-# Amazon limits how much we can charge people with their Multi-Use tokens.
-# You probably should add some leeway to account for international shipping
-charge_limit: 25.00
+# Stripe settings -- you'll need a Stripe account, sign up here --> https://manage.stripe.com/register
+stripe_test_publishable_key:
+stripe_test_secret_key:
+stripe_live_publishable_key:
+stripe_live_secret_key:
+# Do you want to use Stripe in Live or Test mode? 'live' or 'test'
+stripe_payments_mode: 'test'
 
 # Stats settings
 
@@ -60,7 +59,7 @@ ships:  				"Ships...sometime"
 # On Lockitron, it's "Reserve Now"
 call_to_action: "Reserve Now"
 # On Lockitron, this is "Only $149 for a limited time"
-price_human: 		"It costs money!"					
+price_human: 		"It costs money!"
 
 # The paragraph below the price. You'd probably say something about how you're not going to charge them before it ships (so it's less risky).
 dont_give_them_a_reason_to_say_no: "You'll get this exact site. All you'll need to get started is a great product."

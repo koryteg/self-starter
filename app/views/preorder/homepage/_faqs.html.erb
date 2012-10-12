@@ -4,17 +4,17 @@
         <ul>
           <li class=''>
             <details class=''>
-              <summary class=''>How do I setup Amazon Payments?</summary>
-              <p>You'll need to <a href="https://payments.amazon.com/sdui/sdui/accountstatus">create an Amazon Seller Central account</a>. Afterwards, get your access key and secret key from the "Integration" tab on your AWS account. <a href="https://payments.amazon.com/sdui/sdui/helpTab/Checkout-by-Amazon/Advanced-Integration-Help/Using-Your-Access-Key">Click here for more info</a>.
+              <summary class=''>How do I setup Stripe for payments?</summary>
+              <p>You'll need to <a href="https://manage.stripe.com/signup">create an account</a> with <a href="https://stripe.com">Stripe</a>. Afterwards, get your API keys (a total of four: a publishable/secret pair for live-mode, and a publishable/secret pair for test-mode) from the "Settings" tab on your Stripe <a href="https://manage.stripe.com/#account">account</a>. <a href="https://stripe.com/docs">Click here for more info</a>.
                 <br />
                 <br />
-                Once you have your access key and secret key, head over to <code>config/settings.yml</code>. Change <code>amazon_access_key</code> and <code>amazon_secret_key</code> appropriately.</p>
+                Once you have your API key, head over to <code>config/settings.yml</code>. Change the <code>stripe_*_key</code>s appropriately.</p>
             </details>
           </li>
           <li>
             <details class=''>
               <summary>Can I use another payments provider?</summary>
-              <p>Of course. We haven't built in support for other providers, but we recommend that you take a look at <a href="https://stripe.com">Stripe</a> or <a href="https://wepay.com">WePay</a>.</p>
+              <p>Of course. This implementation uses <a href="https://stripe.com">Stripe</a>, but the <a href="https://github.com/lockitron/selfstarter">original</a> supports Amazon Payments.</p>
             </details>
           </li>
           <li>
@@ -40,7 +40,7 @@
               <br />
               Alternatively, you can dive right into the CSS, have a look at <code>app/assets/stylesheets/main.css.scss</code>.</p>
             </details>
-          </li> 
+          </li>
          <li class=''>
             <details class=''>
               <summary>Why did you release this?</summary>
@@ -68,4 +68,4 @@
         </ul>
     </div>
 </div>
-  
+

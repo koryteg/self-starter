@@ -6,15 +6,22 @@
         Let your backers know how their payment information will be handled.
         <br />
 	      <br />
-    		Enter your email address below.
+    		Enter your details below. Payments are powered by <a href="https://stripe.com/">Stripe</a>.
       </p>
-      <%= form_tag "/preorder/prefill", :id => "checkout" do %>
-        <%= email_field_tag "email", nil, :placeholder => "hello@lockitron.com", :required => "required", :id => "email" %>
-        <%= hidden_field_tag "preorder", true %>
-        <%= hidden_field_tag "quantity", params[:quantity] %>
+      <%= form_tag "#", :id => "checkout" do %>
+        <%= text_field_tag "name", nil, :placeholder => "Name", :required => "required", :id => "name" %>
+        <%= email_field_tag "email", nil, :placeholder => "Email", :required => "required", :id => "email" %>
+        <%= text_field_tag "address_line1", nil, :placeholder => "Address line 1", :required => "required", :id => "address_line1" %>
+        <%= text_field_tag "address_line2", nil, :placeholder => "Address line 2", :required => "required", :id => "address_line2" %>
+        <%= text_field_tag "address_zip", nil, :placeholder => "Zipcode", :required => "required", :id => "address_zip", :maxlength => 5 %>
+        <%= text_field_tag "card_number", nil, :placeholder => "Credit Card number", :required => "required", :id => "card_number", :name => nil, :maxlength => 16 %>
+        <%= text_field_tag "card_expiry_month", nil, :placeholder => "Expiry month (e.g. 3)", :required => "required", :id => "card_expiry_month", :name => nil, :maxlength => 3 %>
+        <%= text_field_tag "card_expiry_year", nil, :placeholder => "Expiry year (e.g. 2015)", :required => "required", :id => "card_expiry_year", :name => nil, :maxlength => 4 %>
+        <%= text_field_tag "card_cvc", nil, :placeholder => "CVC", :required => "required", :id => "card_cvc", :name => nil, :maxlength => 4 %>
         <%= submit_tag "Checkout", :class => "blue_button disabled", :id => "amazon_button" %>
       <% end %>
     </div>
     <%= render 'preorder/checkout/sidebar' %>
+    <%= render 'stripe_js' %>
   </div>
 </div>

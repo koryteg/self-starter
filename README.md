@@ -1,4 +1,11 @@
 # Selfstarter
+
+## Note
+
+This is a fork of the [Selfstarter project](https://github.com/lockitron/selfstarter) from [Lockitron](https://lockitron.com). The original project uses Amazon Felxible Payments, while this implementation uses [Stripe](https://stripe.com) for payments. The README is adapted from the original repository.
+
+## About
+
 Selfstarter makes it easy to roll your own crowdfunding site. To get started, fork this repository and change around ```config/settings.yml``` to suit your needs.
 
 [See it in action](http://selfstarter.us)
@@ -9,8 +16,8 @@ After a [rejection from Kickstarter](http://techcrunch.com/2012/10/07/the-story-
 
 Selfstarter is a starting point. We made some specific choices with Selfstarter for Lockitron and we recommend you tailor it for your project:
 
-* We use Amazon Payments for payments. You can use [Stripe](https://stripe.com) or [WePay](https://www.wepay.com/). We used Kickstarter's awesome ```amazon_flex_pay``` gem.
-* We collect multi-use tokens from customers with Amazon Payments - this let's us collect payment information without charging the customer until we are ready to ship
+* This implementation of Selfstarter uses Stripe for payments. You can use Amazon Payments (per the [original project](https://github.com/lockitron/selfstarter) or [WePay](https://www.wepay.com/). We used Stripe's ```stripe-ruby``` [gem](https://github.com/stripe/stripe-ruby).
+* We collect a ```Customer``` object using the Stripe API - this lets us collect payment information without charging the customer until we are ready to ship.
 * Selfstarter doesn't come with any authentication, administration, mailers or analytics tools. We recommend adding a basic set of these so that you can message backers and manage orders.
 
 ## Getting Started
@@ -19,7 +26,7 @@ Selfstarter is a starting point. We made some specific choices with Selfstarter 
 First you'll need to fork and clone this repo
 
 ```bash
-git clone https://github.com/lockitron/selfstarter.git
+git clone https://github.com/siddarth/selfstarter-stripe.git
 ```
 
 Let's get all our dependencies setup:

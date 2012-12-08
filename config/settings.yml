@@ -6,30 +6,30 @@
 # Checkout app/assets/stylesheets/variables.css.scss to change around the CSS quickly
 
 # Set your project goal here - if you manually want to adjust your progress to test the site, head over to the Order model (app/models/order.rb)
-project_goal: 100
+project_goal: 1000
 # If you want to edit the FAQ, head over to app/views/preorder/homepage/_faqs.html.erb
 
 # This'll be both the page title (<title></title>) and the name in the header
-product_name: "Selfstarter"
+product_name: "EARL"
 
 # An image showcasing your product -- it'll show up when you pin your product
 # It should be in app/assets/images
 product_image_path: "my-product-image.png"
 
 # The message on the preorder page, Lockitron's
-value_proposition: "Roll your own crowdfunding"
+value_proposition: "PWN your next hike with EARL!"
 
 # YouTube Video URL (The embed URL, without the query string options)
 # There's no Vimeo support at the moment, but feel free to implement it and  send a pull request!
 youtube_embed_url: "https://www.youtube.com/v/D1L3o88GKew"
 
 # Payments settings
-price:  19.95
+price:  250
 payment_description: "This is what will appear on your manage.stripe.com dashboard"
 
 # Stripe settings -- you'll need a Stripe account, sign up here --> https://manage.stripe.com/register
-stripe_test_publishable_key: 'YOUR-STRIPE-TEST-PUBLISHABLE-KEY'
-stripe_test_secret_key: 'YOUR-STRIPE-TEST-SECRET-KEY'
+stripe_test_publishable_key: 'pk_test_GxyOLJNnQ1XC0rwkZt9qS1sq'
+stripe_test_secret_key: 'sk_test_vmYMcl0zdDdu2LTrjAz5HxDz'
 stripe_live_publishable_key: 'YOUR-STRIPE-LIVE-PUBLISHABLE-KEY'
 stripe_live_secret_key: 'YOUR-STRIPE-LIVE-SECRET-KEY'
 # Do you want to use Stripe in Live or Test mode? 'live' or 'test'
@@ -54,12 +54,12 @@ progress_text: "Implemented"
 # Call to action section
 
 # On Lockitron, it's "First Batch Ships in March 2013"
-ships:  				"Ships...sometime"
+ships:  				"First Batch Ships...Summer 2013"
 
 # On Lockitron, it's "Reserve Now"
-call_to_action: "Reserve Now"
+call_to_action: "Reserve Yours Now"
 # On Lockitron, this is "Only $149 for a limited time"
-price_human: 		"It costs money!"
+price_human: 		"Only $250 for a limited time!"
 
 # The paragraph below the price. You'd probably say something about how you're not going to charge them before it ships (so it's less risky).
 dont_give_them_a_reason_to_say_no: "You'll get this exact site. All you'll need to get started is a great product."

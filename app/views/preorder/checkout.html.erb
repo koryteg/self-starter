@@ -12,7 +12,9 @@
         <%= text_field_tag "name", nil, :placeholder => "Name", :required => "required", :id => "name" %>
         <%= email_field_tag "email", nil, :placeholder => "Email", :required => "required", :id => "email" %>
         <%= text_field_tag "address_line1", nil, :placeholder => "Address line 1", :required => "required", :id => "address_line1" %>
-        <%= text_field_tag "address_line2", nil, :placeholder => "Address line 2", :required => "required", :id => "address_line2" %>
+        <%= text_field_tag "address_line2", nil, :placeholder => "Address line 2/ Apt #", :id => "address_line2" %>
+		<%= text_field_tag "city", nil, :placeholder => "City", :required => "required", :id => "city" %>
+		<%= text_field_tag "state", nil, :placeholder => "State", :required => "required", :id => "state" %>
         <%= text_field_tag "address_zip", nil, :placeholder => "Zipcode", :required => "required", :id => "address_zip", :maxlength => 5 %>
         <%= text_field_tag "card_number", nil, :placeholder => "Credit Card number", :required => "required", :id => "card_number", :name => nil, :maxlength => 16 %>
         <%= text_field_tag "card_expiry_month", nil, :placeholder => "Expiry month (e.g. 3)", :required => "required", :id => "card_expiry_month", :name => nil, :maxlength => 3 %>
